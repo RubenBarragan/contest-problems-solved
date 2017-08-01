@@ -3,8 +3,8 @@
 ## Problem
 In a 4-keys keyboard and a textbox, the only operations that can be performed by these keys are:
 
-1. 'A': Prints one \'A\' on the screen.
-2. 'Ctrl-A': Select the whole text of the screen.
+1. ´A´: Prints one 'A' on the screen.
+2. ´Ctrl-A´: Select the whole text of the screen.
 3. 'Ctrl-C': Copy the selection to the buffer.
 4. 'Ctrl-V': Paste the buffer on the textbox appending it after what is already there.
 
