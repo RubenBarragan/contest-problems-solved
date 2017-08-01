@@ -1,5 +1,5 @@
 # Programming problems to keep sharp the mind.
-In this repository, I solved programming problems which I found interesting and are used in contents across the world wide web.
+In this repository, I solve programming problems which I found interesting and are used in contents across the world wide web.
 
 The Computer Science's subjects that can be found here are diversified but always interesting, enjoyable and challenging:
 
