@@ -1,7 +1,11 @@
 /**
- * This versions of the problem has a complexity time and space of O(n^2) and O(n) respectively. The reasons of why the complexity is n^2 is because in each iteration i, the algorithm needs to compute the maximum of the former results k stored in the hashtable (array) for each k < i.
+ * This versions of the problem has a complexity time and space of O(n^2) 
+ * and O(n) respectively. The reasons of why the complexity is n^2 is 
+ * because in each iteration i, the algorithm needs to compute the maximum 
+ * of the former results k stored in the hashtable (array) for each k < i.
  * 
- * There is a better version of this problem, by calculating only two stored values. I'll go further with this later.
+ * There is a better version of this problem, by calculating only two 
+ * stored values. I'll go further with this later.
  * 
  * @author      Rubén Barragán
  * @version     1.0
