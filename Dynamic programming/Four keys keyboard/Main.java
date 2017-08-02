@@ -12,7 +12,11 @@ public class Main {
     }
 
     /** 
-     * s
+     * Main function to print the maximum of As in the textbox. It basically,
+     * uses bottom-up dynamic programming and iterates until it reaches the
+     * n value. At each iteration, it computes the maximum of the stored
+     * values in the hashtable, meaning that it does not need to compute 
+     * the values from scratch.
      *
      * @param n         number of operations that will be executed 
      *                  to obtain the max of As.
