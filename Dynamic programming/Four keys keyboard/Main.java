@@ -12,7 +12,12 @@
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(maxOfA(8));
+        System.out.println(maxOfA(8));          // 12
+        System.out.println(maxOfA(1));          // 1 (All number n <= 6 the result is n)
+        System.out.println(maxOfA(4));          // 4 (The same as before here)
+        System.out.println(maxOfA(12));         // 36
+        System.out.println(maxOfA(100));        // 1946157056
+        System.out.println(maxOfA(45));         // 331776
     }
 
     /** 
