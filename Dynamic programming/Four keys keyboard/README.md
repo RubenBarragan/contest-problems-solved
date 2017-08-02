@@ -1,6 +1,6 @@
 # 4 Keys Keyboard
 
-### Problem
+## Problem
 In a 4-keys keyboard and a textbox, the only operations that can be performed by these keys are:
 
 1. `A`: Prints one 'A' on the screen.
@@ -10,5 +10,5 @@ In a 4-keys keyboard and a textbox, the only operations that can be performed by
 
 The four keys can only be pressed for *n* times. You have to find the maximum number of 'A's you can print on the textbox (screen).
 
-### Source
+## Source
 [Leetcode](https://leetcode.com)
