@@ -7,19 +7,19 @@
 
 ## Example
 Given a tree *T*.
-
-              1
-            /   \
-          2      3
-         /      /   \
-        4     2     4
-             /
-          4
-
+```
+      1
+    /   \
+  2      3
+ /      /  \
+4     2     4
+     /
+    4
+```
 The duplicate subtrees that are contained in *T* are:
 ```
-     2
-   /
+    2
+  /
 4
 ```
 and:
