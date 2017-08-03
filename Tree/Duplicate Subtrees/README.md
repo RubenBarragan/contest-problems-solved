@@ -27,3 +27,6 @@ and:
 4
 ```
 The last two subtrees are repeated in *T*, and by definition, they have the same structure and same value.
+
+## Source
+[Leetcode](https://leetcode.com)
