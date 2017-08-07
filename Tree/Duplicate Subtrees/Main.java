@@ -3,50 +3,43 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * An approach to this problem is splitting the solution into two steps.
- * One step iterates and keeps tracking of the subtrees through a
- * hashmap to spot duplicate subtrees. The second step, for each possible
- * duplicate subtree, that is, for each root that has been found previously
- * in the first step, checks if the two subtrees are identical (the subtree
- * stored in the hashmap and the current node).
+ * An approach to this problem is splitting the solution into two steps. One step iterates 
+ * and keeps tracking of the subtrees through a hashmap to spot duplicate subtrees. The 
+ * second step, for each possible duplicate subtree, that is, for each root that has been 
+ * found previously in the first step, checks if the two subtrees are identical (the 
+ * subtree stored in the hashmap and the current node).
  * 
- * This approach is relatively expensive since the second step has to
- * re-iterate the whole sub-tree again and again when the first step
- * tells so. Therefore, there is a similar approach without doing the
- * iterative step again and again. I will talk about it in the remainder
- * of this text.
+ * This approach is relatively expensive since the second step has to re-iterate the whole
+ * sub-tree again and again when the first step tells so. Therefore, there is a similar
+ * approach without doing the iterative step again and again. I will talk about it in the
+ * remainder of this text.
  * 
- * What if we represent a subtree (or a tree) with a canonical form like
- * a String form? Doing this, we can check in plain text whether two
- * trees are equal or not. With a map, we could check if there is
- * another substree already seen, but there is a problem with this
- * data structure; how do I keep track of the duplicate subtrees
- * already added to the list? I mean, assume that you have three duplicate
- * subtrees, the first tree is stored in the map. The second subtree
- * is found as duplicate and added to the resulting list. Similarly,
- * the third duplicate subtree is found as duplicate and added to the
- * list as well. We have a problem here.
+ * What if we represent a subtree (or a tree) with a canonical form (hash function) like 
+ * a String form? Doing this, we can check in plain text whether two trees are equal or 
+ * not. With a map, we could check if there is another substree already seen, but there is 
+ * a problem with this data structure; how do I keep track of the duplicate subtrees 
+ * already added to the list? I mean, assume that you have three duplicate subtrees, the 
+ * first tree is stored in the map. The second subtree is found as duplicate and added to 
+ * the resulting list. Similarly, the third duplicate subtree is found as duplicate and 
+ * added to the list as well. We have a problem here.
  * 
- * To avoid the previous problem, we can change the map to a map.
- * Mapping the subtree to a number of occurrences. In this case, returning
- * to the three duplicate subtrees, the second subtree sees that there is
- * only only occurrence of the duplicate subtree. Thus, adding the
- * subtree to the list and increasing the occurrences by 1. The third
- * subtree sees that there are two ocurrences of the subtree and now that
- * there is no need to add the same subtree to the list. The solution is 
- * created based on this idea.
+ * To avoid the previous problem, we can change the map to a map. Mapping the subtree to
+ * a number of occurrences. In this case, returning to the three duplicate subtrees, the
+ * second subtree sees that there is only only occurrence of the duplicate subtree. Thus,
+ * adding the subtree to the list and increasing the occurrences by 1. The third subtree
+ * sees that there are two ocurrences of the subtree and now that there is no need to add
+ * the same subtree to the list. The solution is created based on this idea.
  * 
- * I want to point out the important fact of hashing correctly the 
- * subtrees. I mean, making sure that two different (not duplicate) subtrees 
- * do not hash to the same string. This can generate errors inside the
- * algorithm and of course, resulting in wrong computations.
+ * I want to point out the important fact of hashing correctly the subtrees. I mean, 
+ * making sure that two different (not duplicate) subtrees do not hash to the same string.
+ * This can generate errors inside the algorithm and of course, resulting in wrong 
+ * computations.
  * 
  * @author      Rubén Barragán
  * @version     1.0
  */
 public class Main {
     public static void main(String[] args) {
-       
         // Node root = new Node(1);
         // root.left = new Node(2);
         // root.left.left = new Node(4);
@@ -80,6 +73,14 @@ public class Main {
         }
     }
 
+    /** 
+     * Main function of the solution. It just initialize the Map (HashMap), List (LinkedList)
+     * and starts the recursive auxiliar method.
+     *
+     * @param root      Root of the tree that the algorithm will analyze.         
+     * @return          List containing all the duplicate subtrees.
+     * @since           1.0
+     */
     public static List<Node> findDuplicateSubtrees(Node root) {
         HashMap<String, Integer> map = new HashMap<>();
         LinkedList<Node> result = new LinkedList<>();
@@ -87,10 +88,23 @@ public class Main {
         return result;
     }
 
+    /** 
+     * Core method. The function of this method is to hash the substrees recursively and check
+     * of the substrees are duplicate to added them to the resulting list. The traversing is
+     * performed in pre-order (caused by the hash function).
+     *
+     * @param root      Current root of the subtree.
+     * @param map       HashMap that maps the hash of the subtree to the number of occurrences
+     *                  in the whole tree.
+     * @param res       Resulting list that will be recolecting all duplicate subtrees.
+     * @return          if root is null, return the "end" of the hash represented by ".".
+     *                  Otherwise, the hash of a given subtree.
+     * @since           1.0
+     */
     public static String inOrderTraversal(Node root, HashMap<String, Integer> map, LinkedList<Node> res) {
         if (root == null) 
             return ".";  
-        String treeHash = root.val + inOrderTraversal(root.left, map, res) + inOrderTraversal(root.right, map, res);
+        String treeHash = root.val + inOrderTraversal(root.left, map, res) + inOrderTraversal(root.right, map, res);        // Hashing of the subtree.
         if(!map.containsKey(treeHash)) {
             map.put(treeHash, 1);
         } else {
@@ -103,6 +117,12 @@ public class Main {
     }
 }
 
+/**
+ * Class to represent the structure of a Tree.
+ * 
+ * @author      Rubén Barragán
+ * @version     1.0
+ */
 class Node {
     int val;
     Node left;

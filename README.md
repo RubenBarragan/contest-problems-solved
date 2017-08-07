@@ -14,5 +14,8 @@ The subjects that can be found here are diversified but always interesting, enjo
 ## Languages
 I mostly write code in Java. However, I do not focus this practice on only one language. I will code in another language like Python, C++ or another language, when I want to practice such skill.
 
+## Comments
+Comments, opinions or feedback is always welcome. Feel free to contact me or leave a comment.
+
 ## Warning
 There is no need to say that spoilers of programming problems are spread all over here.
