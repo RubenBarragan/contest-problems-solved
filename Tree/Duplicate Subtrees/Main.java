@@ -72,8 +72,8 @@ public class Main {
         root.left = new Node(0);
         root.left.left = new Node(0);
         root.right = new Node(0);
-        root.right.left = new Node(0);
         root.right.right = new Node(0);
+        root.right.right.right = new Node(0);
 
         for(Node n : findDuplicateSubtrees(root)) {
             System.out.print(n.val + ", ");
